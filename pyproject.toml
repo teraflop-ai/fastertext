@@ -1,0 +1,29 @@
+[project]
+name = "fastertext"
+version = "0.1.0"
+description = "A parallel rust version of fasttext classification with rayon."
+readme = "README.md"
+authors = [
+    { name = "Enrico Shippole", email = "enricoship@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.5.2",
+]
+
+[tool.maturin]
+module-name = "fastertext._core"
+python-packages = ["fastertext"]
+python-source = "src"
+
+[tool.uv]
+cache-keys = [{ file = "pyproject.toml" }, { file = "src/**/*.rs" }, { file = "Cargo.toml" }, { file = "Cargo.lock" }]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[dependency-groups]
+dev = [
+    "fasttext>=0.9.3",
+]
