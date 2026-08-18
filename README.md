@@ -26,6 +26,13 @@ speedup:    6.1x
 top-1 agreement: 100.0000%
 ```
 
+# Contributing
+Need to support many linux builds through docker container to publish release wheels:
+```bash
+docker run --rm -v $(pwd):/io ghcr.io/pyo3/maturin build --release
+uv publish target/wheels/*.whl
+```
+
 # Citations
 ```bibtex
 @misc{shippole2026fastertext,
