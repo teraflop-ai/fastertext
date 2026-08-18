@@ -1,6 +1,6 @@
 [project]
 name = "fastertext"
-version = "0.1.0"
+version = "0.1.1"
 description = "A parallel rust version of fasttext classification with rayon."
 readme = "README.md"
 authors = [
@@ -8,7 +8,7 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "numpy>=2.5.2",
+    "numpy>=2.0",
 ]
 
 [tool.maturin]
