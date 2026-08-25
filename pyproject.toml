@@ -1,6 +1,6 @@
 [project]
 name = "fastertext"
-version = "0.1.1"
+version = "0.1.2"
 description = "A parallel rust version of fasttext classification with rayon."
 readme = "README.md"
 authors = [
