@@ -29,7 +29,10 @@ top-1 agreement: 100.0000%
 # Contributing
 Need to support many linux builds through docker container to publish release wheels:
 ```bash
-docker run --rm -v $(pwd):/io ghcr.io/pyo3/maturin build --release
+rustup target add x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu
+uv pip install 'maturin[zig]'
+maturin build --release --zig --target x86_64-unknown-linux-gnu
+maturin build --release --zig --target aarch64-unknown-linux-gnu
 uv publish target/wheels/*.whl
 ```
 
