@@ -26,4 +26,6 @@ build-backend = "maturin"
 [dependency-groups]
 dev = [
     "fasttext>=0.9.3",
+    "pyperf>=2.10.0",
+    "pytest>=9.1.1",
 ]

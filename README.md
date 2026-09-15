@@ -29,10 +29,14 @@ top-1 agreement: 100.0000%
 # Contributing
 Need to support many linux builds through docker container to publish release wheels:
 ```bash
+set -e
 rustup target add x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu
 uv pip install 'maturin[zig]'
-maturin build --release --zig --target x86_64-unknown-linux-gnu
-maturin build --release --zig --target aarch64-unknown-linux-gnu
+
+for rust_target in x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu; do
+    maturin build --release --zig --target "$rust_target" --compatibility manylinux2014
+done
+
 uv publish target/wheels/*.whl
 ```
 
